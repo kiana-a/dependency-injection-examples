@@ -1,6 +1,7 @@
 package com.example.dependencyinjectionexamples;
 
 import com.example.dependencyinjectionexamples.controllers.*;
+import com.example.dependencyinjectionexamples.services.LifeCycleDemoBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +14,9 @@ public class DependencyInjectionExamplesApplication {
 
         I18nController i18nController = (I18nController) context.getBean("i18nController");
         System.out.println(i18nController.sayHallo());
+
+        LifeCycleDemoBean lifeCycleDemoBean = (LifeCycleDemoBean) context.getBean("lifeCycleDemoBean");
+        System.out.println(lifeCycleDemoBean);
 
         MyController myController = (MyController) context.getBean("myController");
 
